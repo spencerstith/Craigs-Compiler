@@ -2,7 +2,7 @@ package craigscode.symbols;
 
 import craigscode.lexer.*;
 
-public class Array extends Type{
+public class Array extends Type {
     public Type of;
     public int size = 1;
 
