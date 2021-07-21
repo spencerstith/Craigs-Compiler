@@ -19,7 +19,7 @@ public class Env {
 
     public Id get(Token w) {
         for (Env e = this; e != null; e = e.prev) {
-            Id found = (Id)(e.table.get(w));
+            Id found = e.table.get(w);
             if (found != null) return found;
         }
         return null;
