@@ -3,8 +3,8 @@ package craigscode.inter;
 import craigscode.symbols.*;
 
 public class If extends Stmt {
-    Expr expr;
-    Stmt stmt;
+    final Expr expr;
+    final Stmt stmt;
 
     public If(Expr x, Stmt s) {
         expr = x;

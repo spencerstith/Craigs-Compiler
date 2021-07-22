@@ -7,7 +7,7 @@ import craigscode.symbols.*;
 import java.io.*;
 
 public class Parser {
-    private Lexer lex;
+    private final Lexer lex;
     private Token look;
     Env top = null;
     int used = 0;
@@ -22,7 +22,7 @@ public class Parser {
     }
     
     void error(String s) {
-        throw new Error("near line " + lex.line + ": " + s);
+        throw new Error("near line " + Lexer.line + ": " + s);
     }
     
     void match(int t) throws IOException {
@@ -213,7 +213,7 @@ public class Parser {
         while (look.tag == '+' || look.tag == '-') {
             Token tok = look;
             move();
-            x = new Arith(tok, x, term());
+            x = new Arithmetic(tok, x, term());
         }
         return x;
     }
@@ -223,7 +223,7 @@ public class Parser {
         while (look.tag == '*' || look.tag == '/') {
             Token tok = look;
             move();
-            x = new Arith(tok, x, unary());
+            x = new Arithmetic(tok, x, unary());
         }
         return x;
     }
@@ -288,7 +288,7 @@ public class Parser {
         match(']');
         type = ((Array)type).of;
         w = new Constant(type.width);
-        t1 = new Arith(new Token('*'), i, w);
+        t1 = new Arithmetic(new Token('*'), i, w);
         loc = t1;
         while(look.tag == '[') {
             match('[');
@@ -296,8 +296,8 @@ public class Parser {
             match(']');
             type = ((Array)type).of;
             w = new Constant(type.width);
-            t1 = new Arith(new Token('*'), i, w);
-            t2 = new Arith(new Token('+'), loc, t1);
+            t1 = new Arithmetic(new Token('*'), i, w);
+            t2 = new Arithmetic(new Token('+'), loc, t1);
             loc = t2;
         }
         return new Access(a, loc, type);

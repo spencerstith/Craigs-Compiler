@@ -3,8 +3,9 @@ package craigscode.inter;
 import craigscode.lexer.*;
 import craigscode.symbols.*;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class Expr extends Node {
-    public Token op;
+    public final Token op;
     public Type type;
 
     Expr(Token tok, Type p) {

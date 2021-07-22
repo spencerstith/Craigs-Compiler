@@ -1,7 +1,7 @@
 package craigscode.inter;
 
 public class Break extends Stmt {
-    Stmt stmt;
+    final Stmt stmt;
 
     public Break() {
         if (Stmt.Enclosing == Stmt.Null) {

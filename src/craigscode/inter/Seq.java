@@ -1,7 +1,8 @@
 package craigscode.inter;
 
 public class Seq extends Stmt {
-    Stmt stmt1, stmt2;
+    final Stmt stmt1;
+    final Stmt stmt2;
 
     public Seq(Stmt s1, Stmt s2) {
         stmt1 = s1;

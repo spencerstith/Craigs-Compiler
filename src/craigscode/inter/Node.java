@@ -3,7 +3,7 @@ package craigscode.inter;
 import craigscode.lexer.*;
 
 public class Node {
-    int lexLine;
+    final int lexLine;
     static int labels = 0;
 
     Node() {

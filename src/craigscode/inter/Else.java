@@ -3,8 +3,9 @@ package craigscode.inter;
 import craigscode.symbols.*;
 
 public class Else extends Stmt {
-    Expr expr;
-    Stmt stmt1, stmt2;
+    final Expr expr;
+    final Stmt stmt1;
+    final Stmt stmt2;
 
     public Else(Expr x, Stmt s1, Stmt s2) {
         expr = x;

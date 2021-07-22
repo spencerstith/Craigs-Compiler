@@ -4,8 +4,8 @@ import craigscode.lexer.*;
 import craigscode.symbols.*;
 
 public class Access extends Op {
-    public Id array;
-    public Expr index;
+    public final Id array;
+    public final Expr index;
 
     public Access(Id a, Expr i, Type p) {
         super(new Word("[]", Tag.INDEX), p);

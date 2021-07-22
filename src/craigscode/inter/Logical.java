@@ -5,7 +5,8 @@ import craigscode.symbols.*;
 
 
 public class Logical extends Expr {
-    public Expr expr1, expr2;
+    public final Expr expr1;
+    public final Expr expr2;
 
     Logical(Token tok, Expr x1, Expr x2) {
         super(tok, null);

@@ -5,8 +5,8 @@ import craigscode.lexer.*;
 import craigscode.inter.*;
 
 public class Env {
-    private HashMap<Token, Id> table;
-    protected Env prev;
+    private final HashMap<Token, Id> table;
+    protected final Env prev;
 
     public Env(Env n) {
         table = new HashMap<>();

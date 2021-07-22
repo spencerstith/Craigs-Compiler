@@ -1,7 +1,6 @@
 package craigscode.inter;
 
 import craigscode.lexer.*;
-import craigscode.symbols.*;
 
 public class Not extends Logical{
     public Not(Token tok, Expr x2) {

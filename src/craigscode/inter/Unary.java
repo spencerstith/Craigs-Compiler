@@ -4,7 +4,7 @@ import craigscode.lexer.*;
 import craigscode.symbols.*;
 
 public class Unary extends Op {
-    public Expr expr;
+    public final Expr expr;
     public Unary(Token tok, Expr x) {
         super(tok, null);
         expr = x;

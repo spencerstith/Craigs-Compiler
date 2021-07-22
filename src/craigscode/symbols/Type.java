@@ -4,7 +4,7 @@ import craigscode.lexer.Tag;
 import craigscode.lexer.Word;
 
 public class Type extends Word {
-    public int width; // = 0
+    public final int width; // = 0
 
     public Type(String s, int tag, int w) {
         super(s, tag);

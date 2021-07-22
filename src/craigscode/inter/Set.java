@@ -1,11 +1,10 @@
 package craigscode.inter;
 
-import craigscode.lexer.*;
 import craigscode.symbols.*;
 
 public class Set extends Stmt {
-    public Id id;
-    public Expr expr;
+    public final Id id;
+    public final Expr expr;
 
     public Set(Id i, Expr x) {
         id = i;

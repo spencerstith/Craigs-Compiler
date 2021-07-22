@@ -1,12 +1,11 @@
 package craigscode.inter;
 
-import craigscode.lexer.*;
 import craigscode.symbols.*;
 
 public class SetElem extends Stmt {
-    public Id array;
-    public Expr index;
-    public Expr expr;
+    public final Id array;
+    public final Expr index;
+    public final Expr expr;
 
     public SetElem(Access x, Expr y) {
         array = x.array;
