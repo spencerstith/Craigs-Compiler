@@ -6,8 +6,8 @@ public class Break extends Stmt {
     public Break() {
         if (Stmt.Enclosing == Stmt.Null) {
             error("unclosed break");
-            stmt = Stmt.Enclosing;
         }
+        stmt = Stmt.Enclosing;
     }
 
     public void gen(int b, int a) {

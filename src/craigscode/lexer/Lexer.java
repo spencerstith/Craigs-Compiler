@@ -8,12 +8,13 @@ public class Lexer {
     public static int line = 1;
     char peek = ' ';
     HashMap<String, Word> words = new HashMap<>();
+    BufferedReader reader;
 
     void reserve(Word w) {
         words.put(w.lexeme, w);
     }
 
-    public Lexer() {
+    public Lexer() throws IOException {
         reserve(new Word("if", Tag.IF));
         reserve(new Word("else", Tag.ELSE));
         reserve(new Word("while", Tag.WHILE));
@@ -25,10 +26,12 @@ public class Lexer {
         reserve(Type.Char);
         reserve(Type.Bool);
         reserve(Type.Float);
+        
+        reader = new BufferedReader(new FileReader("test"));
     }
 
     void readch() throws IOException {
-        peek = (char)System.in.read();
+        peek = (char)reader.read();
     }
 
     boolean readch(char c) throws IOException {

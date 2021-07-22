@@ -5,10 +5,13 @@ public class Word extends Token {
 
     public Word(String s, int tag) {
         super(tag);
+        lexeme = s;
     }
+    
     public String toString() {
         return lexeme;
     }
+    
     public static final Word
     and = new Word("&&", Tag.AND),
     or = new Word("||", Tag.OR),
